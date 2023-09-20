@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  client:
+    image: finance-web
+    build:
+      dockerfile: dockerfile
+    container_name: finance-web
+    volumes:
+      - /finance-web:finance-web
+      - node_modules:/finance-web/node_modules/
+    ports:
+      - "3000:3000"
+volumes:
+  node_modules
