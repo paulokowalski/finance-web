@@ -1,3 +1,13 @@
-FROM --platform=linux/arm64/v8 nginx:latest
-COPY build /app/1cliq
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+FROM node:17-alpine
+
+WORKDIR /app
+
+COPY packeage.json .
+
+RUN install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
