@@ -2,7 +2,7 @@ FROM node:17-alpine
 
 WORKDIR /app
 
-COPY packeage.json .
+COPY package.json .
 
 RUN install
 
